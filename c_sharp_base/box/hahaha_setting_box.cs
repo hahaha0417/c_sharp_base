@@ -56,7 +56,7 @@ namespace c_sharp_base
 
         public int Load_System()
         {
-            int result = hahaha.Json_.Load($"{System.Dir_Environment}/{System.Name_Setting}/{app.Name_Application}/{System.Name_Class}/{System.Name_File}", ref System);
+            int result = hahaha.Json_.Load($"{System.Dir_Environment}/{System.Name_Setting}/{System.Name_Class}/{System.Name_File}", ref System);
 
             return result;
 
@@ -64,7 +64,7 @@ namespace c_sharp_base
 
         public int Save_System()
         {
-            hahaha.Json_.Save($"{System.Dir_Environment}/{System.Name_Setting}/{System.Name_Class}/{app.Name_Application}/{System.Name_File}", System);
+            hahaha.Json_.Save($"{System.Dir_Environment}/{System.Name_Setting}/{System.Name_Class}/{System.Name_File}", System);
 
             return 0;
 
@@ -72,7 +72,7 @@ namespace c_sharp_base
 
         public int Load_Global()
         {
-            int result = hahaha.Json_.Load($"{System.Dir_Environment}/{System.Name_Setting}/{app.Name_Application}/{Global.Name_Class}/{Global.Name_File}", ref Global);
+            int result = hahaha.Json_.Load($"{System.Dir_Environment}/{System.Name_Setting}/{Global.Name_Class}/{Global.Name_File}", ref Global);
 
             return result;
 
@@ -80,7 +80,7 @@ namespace c_sharp_base
 
         public int Save_Global()
         {
-            hahaha.Json_.Save($"{System.Dir_Environment}/{System.Name_Setting}/{app.Name_Application}/{Global.Name_Class}/{Global.Name_File}", Global);
+            hahaha.Json_.Save($"{System.Dir_Environment}/{System.Name_Setting}/{Global.Name_Class}/{Global.Name_File}", Global);
 
             return 0;
 
