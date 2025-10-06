@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\hahahalib\hahahalib\hahahalib.csproj" />
-    <ProjectReference Include="..\hahahaUIlib\hahahaUIlib\hahahaUIlib.csproj" />
   </ItemGroup>
 
 </Project>
