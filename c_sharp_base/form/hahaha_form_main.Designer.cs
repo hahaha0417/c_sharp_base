@@ -34,25 +34,25 @@
             // 
             // panel_title
             // 
-            panel_title.Size = new Size(812, 65);
+            panel_title.Size = new Size(844, 65);
             // 
             // panel_base
             // 
-            panel_base.Size = new Size(812, 508);
+            panel_base.Size = new Size(844, 586);
             // 
             // panel_body
             // 
-            panel_body.Size = new Size(812, 443);
+            panel_body.Size = new Size(844, 521);
             // 
             // panel_title_system
             // 
-            panel_title_system.Location = new Point(594, 0);
+            panel_title_system.Location = new Point(626, 0);
             // 
             // hahaha_form_main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(832, 528);
+            ClientSize = new Size(864, 606);
             Name = "hahaha_form_main";
             Text = "Form1";
             FormClosing += hahaha_form_main_FormClosing;
