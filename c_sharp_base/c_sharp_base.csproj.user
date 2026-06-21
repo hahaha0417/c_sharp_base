@@ -4,5 +4,8 @@
     <Compile Update="form\hahaha_form_main.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="form\hahaha_form_test.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
