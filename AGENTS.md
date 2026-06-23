@@ -7,12 +7,14 @@
 - 每次處理需求前，先讀本檔。
 - 先縮小需求範圍，再打開直接相關檔案，不要一開始全專案掃描。
 - `.agents/` 只保留對本 C# WinForms 專案仍有用的規則。
+- `.agent_customs/rules/` 放各自獨立頁面或各功能自己專屬的規則，方便各頁面獨立處理。
 - 規則衝突優先順序：
   1. 本檔「最高優先」
   2. 使用者當前需求
   3. `.agents/rules/` 對應規則檔
-  4. `hahahalib` / `hahahaUIlib` 既有實作慣例
-  5. `c_sharp_base` 主專案既有實作慣例
+  4. `.agent_customs/rules/` 對應頁面或功能的專屬規則
+  5. `hahahalib` / `hahahaUIlib` 既有實作慣例
+  6. `c_sharp_base` 主專案既有實作慣例
 
 ## 最高優先
 
@@ -39,6 +41,29 @@
 
 - [`.agents/rules/naming/project-naming.md`](.agents/rules/naming/project-naming.md)
 
+### Form 共用規則
+
+- [`.agents/rules/form/common-form.md`](.agents/rules/form/common-form.md)
+- [`.agents/rules/form/main-form.md`](.agents/rules/form/main-form.md)
+- [`.agents/rules/form/general-form.md`](.agents/rules/form/general-form.md)
+- [`.agents/rules/form/setting-form.md`](.agents/rules/form/setting-form.md)
+
+### Thread 共用規則
+
+- [`.agents/rules/thread/thread-command.md`](.agents/rules/thread/thread-command.md)
+- [`.agents/rules/thread/thread-pause.md`](.agents/rules/thread/thread-pause.md)
+
+### Setting 共用規則
+
+- [`.agents/rules/setting/setting-box.md`](.agents/rules/setting/setting-box.md)
+
+### Form 客製 / 獨立規則
+
+- [`.agent_customs/rules/form/README.md`](.agent_customs/rules/form/README.md)
+- [`.agent_customs/rules/form/hahaha_form_main.md`](.agent_customs/rules/form/hahaha_form_main.md)
+- [`.agent_customs/rules/form/hahaha_form_test.md`](.agent_customs/rules/form/hahaha_form_test.md)
+- [`.agent_customs/rules/form/hahaha_form_setting.md`](.agent_customs/rules/form/hahaha_form_setting.md)
+
 ## 需求對應讀法
 
 - 命名、類別、欄位、常數、enum：
@@ -47,26 +72,42 @@
   - 先讀 `.agents/rules/workflow/00-project-policy.md`
   - 再讀 `.agents/rules/workflow/01-feature-placement.md`
 - WinForms 啟動流程、主畫面、事件：
+  - 先讀 `.agents/rules/form/common-form.md`
+  - 再讀 `.agents/rules/form/main-form.md`
+  - 再讀 `.agents/rules/form/general-form.md`
   - 先讀 `.agents/rules/workflow/02-form-initialization.md`
   - 再讀 `D:\vs\c#\c_sharp_base\c_sharp_base\Program.cs`
   - 再讀 `D:\vs\c#\c_sharp_base\c_sharp_base\define\hahaha_define.cs`
   - 再讀 `D:\vs\c#\c_sharp_base\c_sharp_base\form\`
   - `hahaha_define.cs` 是全專案共用物件入口
-  - `hahaha_form_main.cs`（主頁）、`hahaha_form_test.cs`（一般頁面） 的實作規則已抽到 `.agents/rules/workflow/02-form-initialization.md`，後續不要把它們當唯一規範來源
+  - 主頁規則、一般頁面規則已抽到 `.agents/rules/form/`，後續不要把單一 `.cs` 檔當唯一規範來源
+  - 若是某個頁面自己的獨立規則，讀 `D:\vs\c#\c_sharp_base\.agent_customs\rules\` 下對應分類
+  - `hahaha_form_main`、`hahaha_form_test`、`hahaha_form_setting` 的處理方式已抽到 `.agent_customs/rules/form/`
 - 啟動即顯示 form / 初始化建立子表單：
+  - 先讀 `.agents/rules/form/common-form.md`
+  - 再讀 `.agents/rules/form/main-form.md`
+  - 再讀 `.agents/rules/form/general-form.md`
   - 先讀 `.agents/rules/workflow/02-form-initialization.md`
   - 再讀 `D:\vs\c#\c_sharp_base\c_sharp_base\define\hahaha_define.cs`
 - 共用工具、thread、timer、log、json：
   - 先讀 `.agents/rules/workflow/00-project-policy.md`
   - 再讀 `D:\vs\c#\c_sharp_base\hahahalib\hahahalib\`
+- 設定容器、設定載入、設定共用入口：
+  - 先讀 `.agents/rules/setting/setting-box.md`
+  - 再讀 `.agents/rules/form/setting-form.md`
+  - 再讀 `D:\vs\c#\c_sharp_base\c_sharp_base\define\hahaha_define.cs`
+  - 再讀 `D:\vs\c#\c_sharp_base\c_sharp_base\box\hahaha_setting_box.cs`
+  - 設定容器的建立與掛載入口以 `hahaha_define.cs` 為準
 - `hahaha_thread_command` / `hahaha_thread_pause` 子類別、背景處理、UI thread 回拋：
+  - 先讀 `.agents/rules/thread/thread-command.md`
+  - 再讀 `.agents/rules/thread/thread-pause.md`
   - 先讀 `.agents/rules/workflow/03-thread-command.md`
   - 再讀 `.agents/rules/workflow/04-thread-pause.md`
   - 再讀 `D:\vs\c#\c_sharp_base\hahahalib\hahahalib\thread\hahaha_thread_command.cs`
   - 再讀 `D:\vs\c#\c_sharp_base\hahahalib\hahahalib\thread\hahaha_thread_pause.cs`
   - 最後才讀需求直接相關的 `c_sharp_base/thread/` 子類別
-  - `hahaha_thread_command_timer_test.cs` 的實作規則已抽到 `.agents/rules/workflow/03-thread-command.md`，後續不要把它當唯一規範來源
-  - `hahaha_thread_pause_timer_test.cs` 的實作規則已抽到 `.agents/rules/workflow/04-thread-pause.md`，後續不要把它當唯一規範來源
+  - `hahaha_thread_command_timer_test.cs` 的共用處理方法已抽到 `.agents/rules/thread/thread-command.md`，後續不要把它當唯一規範來源
+  - `hahaha_thread_pause_timer_test.cs` 的共用處理方法已抽到 `.agents/rules/thread/thread-pause.md`，後續不要把它當唯一規範來源
 - 可重用 UI 元件、控制項、表單基底、視覺封裝：
   - 先讀 `.agents/rules/workflow/01-feature-placement.md`
   - 再讀 `D:\vs\c#\c_sharp_base\hahahaUIlib\hahahaUIlib\`
