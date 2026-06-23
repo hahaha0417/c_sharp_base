@@ -2,14 +2,14 @@
 
 ## 共用物件入口
 
-- `D:\vs\c#\c_sharp_base\c_sharp_base\define\hahaha_define.cs` 是全專案共用物件入口。
+- `../../../c_sharp_base/define/hahaha_define.cs` 是全專案共用物件入口。
 - 全域 form 引用、thread 物件、timer、log、json、setting 與初始化/關閉流程，都優先集中在 `hahaha_define.cs` 管理。
 - form 不應各自 new 一份平行的全域物件；需要共用能力時，優先使用 `hahaha_define.cs` 內已建立的靜態物件。
 - 主頁與一般頁面都可以使用 `hahaha_define.cs` 提供的共用物件，但不要在 form 內重新定義另一套全域狀態。
 
 ## 共用初始化規則
 
-- 啟動後要立即建立或顯示的 form，統一在 `D:\vs\c#\c_sharp_base\c_sharp_base\define\hahaha_define.cs` 管理。
+- 啟動後要立即建立或顯示的 form，統一在 `../../../c_sharp_base/define/hahaha_define.cs` 管理。
 - `Program.cs` 只保留主啟動順序，不直接散落多個測試或子表單建立碼。
 - 跨表單的建立、持有、`Show()` 時機，集中放在 `hahaha_define.cs`。
 - 單一 form 內部控制項初始化留在 form 自己處理。

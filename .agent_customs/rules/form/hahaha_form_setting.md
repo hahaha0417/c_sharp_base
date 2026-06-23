@@ -3,7 +3,7 @@
 ## 適用範圍
 
 - 本檔只描述設定頁 `hahaha_form_setting` 自己的處理方式。
-- 設定頁共用模式另讀 `D:\vs\c#\c_sharp_base\.agents\rules\form\setting-form.md`。
+- 設定頁共用模式另讀 `../../../.agents/rules/form/setting-form.md`。
 
 ## 結構
 

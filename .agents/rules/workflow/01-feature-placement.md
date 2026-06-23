@@ -4,14 +4,14 @@
 
 ### 解決方案
 
-- `D:\vs\c#\c_sharp_base\c_sharp_base.sln`
+- `../../../c_sharp_base.sln`
 - 目前主要專案：
-  - `D:\vs\c#\c_sharp_base\c_sharp_base\c_sharp_base.csproj`
-  - `D:\vs\c#\c_sharp_base\hahahalib\hahahalib\hahahalib.csproj`
+  - `../../../c_sharp_base/c_sharp_base.csproj`
+  - `../../../hahahalib/hahahalib/hahahalib.csproj`
 
 ### 主專案
 
-- `D:\vs\c#\c_sharp_base\c_sharp_base`
+- `../../../c_sharp_base`
 - 主要資料夾：
   - `form/`：表單與畫面流程
   - `box/`：設定或互動封裝
@@ -21,10 +21,10 @@
 
 ### 核心庫
 
-- `D:\vs\c#\c_sharp_base\hahahalib`
+- `../../../hahahalib`
   - 基礎能力與共用功能
   - 已有方向：`thread/`、`thread_pool/`、`timer/`、`log/`、`json/`、`sleep/`、`form/`、`ui/`
-- `D:\vs\c#\c_sharp_base\hahahaUIlib`
+- `../../../hahahaUIlib`
   - 可重用 UI 控制項、視覺元件、表單外觀封裝
 
 ## 落點判斷
